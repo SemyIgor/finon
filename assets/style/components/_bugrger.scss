@@ -1,0 +1,23 @@
+.burger {
+    // .burger__btn
+
+    &__btn {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 20px;
+        height: 20px;
+    }
+
+    // .burger__icon
+
+    &__icon {
+        &[data-open] {}
+
+        &[data-close] {
+            display: none;
+        }
+    }
+}

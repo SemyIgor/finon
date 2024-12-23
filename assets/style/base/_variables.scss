@@ -1,0 +1,39 @@
+$container-max-width: 1200px;
+$container-max-width-value: strip-units($container-max-width);
+$container-min-width: 360px;
+$container-min-width-value: strip-units($container-min-width);
+
+
+:root {
+    --body-bg: #fff;
+    
+    --font-family: "Roboto", sans-serif;
+    // --second-family: ;
+
+    --font-weight: 400;
+
+    --font-size: 14px;
+
+    --line-height: 120%;
+
+
+    --color-black: #2c3246;
+    --color-gray: rgba(44, 50, 70, 0.56);
+    --color-light-sky: #f7fafb;
+    --color-light-mint: #73ffab;
+    --color-green: #2ac77b;
+    --color-midnight-blue: #2c3246;
+    --color-white: #f7fafb;
+    --color-gray-light: rgba(255, 255, 255, 0.56);
+    --color-gray-light-2: rgba(247, 250, 251, 0.56);
+    --color-graphite: #3d4255;
+
+
+    --container-width-max: #{$container-max-width};
+    --container-width-min: #{$container-min-width};
+
+    --container-padding-inline: 20px;
+
+
+    --transition: 0.3s ease-in-out;
+}

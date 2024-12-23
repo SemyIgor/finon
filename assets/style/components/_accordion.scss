@@ -1,0 +1,104 @@
+.accordion {
+    --padding-inline: 30px;
+    --padding-block: 30px;
+
+    .accordion__item {
+        box-sizing: border-box;
+
+        // transition: background-color var(--transition);
+
+        @include media-hover {
+            &:hover {
+                // background-color: #eee;
+            }
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid #eee;
+        }
+
+        .accordion__item-caption {
+            margin: 0;
+            padding: 0;
+            font-weight: var(--font-weight);
+        }
+
+        .accordion__item-btn {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            width: 100%;
+
+            padding: var(--padding-block) var(--padding-inline);
+
+            position: relative;
+
+            // .accordion__item-btn-icon
+
+            &-icon {
+
+                // .accordion__item-btn-icon-img
+
+                &-img {
+                    transition: transform var(--transition);
+                }
+            }
+
+            // .ac-trigger__caption
+
+            &-caption {}
+        }
+
+        .accordion__item-content {
+            overflow: hidden;
+            transition-property: height, visibility;
+            transition-timing-function: ease;
+
+            padding: 0 30px;
+
+            --padding-bottom: 15px;
+
+            p {
+                padding: 0;
+                margin: 0;
+
+                padding-bottom: var(--padding-bottom);
+            }
+
+            ul,
+            ol {
+                padding: 0;
+                margin: 0;
+
+                // list-style: none;
+                
+                padding-left: var(--padding-inline);
+                padding-bottom: var(--padding-bottom);
+
+                li {}
+            }
+
+            a {
+
+                @include media-hover {
+                    &:hover {}
+                }
+            }
+        }
+
+        &.js-enabled .accordion__item-content {
+        }
+
+        &.is-active {
+            .accordion__item-btn-icon-img {
+                transform: rotate(180deg);
+            }
+
+            .accordion__item-content {
+                visibility: visible;         
+            }
+        }
+    }
+}

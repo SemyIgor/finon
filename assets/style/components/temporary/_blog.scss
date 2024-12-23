@@ -1,0 +1,289 @@
+.blog {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        margin: 0;
+    }
+
+    input {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border: none;
+        outline: none;
+        background: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    --color-grey-bg: #F7FAFB;
+    --color-grey-lbl: #171A26;
+    --color-grey-phold: rgba(23, 26, 38, 0.64);
+    --color-grey-txt: #939AAA;
+
+    --color-black-btn-txt: #2c3246;
+    --color-black-btn-bg: #73ffab;
+
+    & .blog__container {
+        background-color: var(--color-grey-bg);
+        padding-bottom: 150px;
+        width: clamp(360px, 100%, 1440px);
+        padding-inline: 120px;
+    }
+
+    &__heading {
+        padding-top: 150px;
+        padding-bottom: 48px;
+    }
+
+    &__heading h1 {
+        font-size: 80px;
+        line-height: 90%;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: #2ac77b;
+    }
+
+    &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        column-gap: 24px;
+        row-gap: 48px;
+        padding-top: 48px;
+        padding-bottom: 150px;
+    }
+
+
+    &__card {
+        width: calc((100% - 48px) / 3);
+        transition: transform .3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    &__card-image {
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__card-info {
+        max-width: 88.3%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    &__card-brief {
+        display: flex;
+        justify-content: flex-start;
+        gap: 6px;
+    }
+
+    &__card-info-category,
+    &__card-info-date,
+    &__card-info-time {
+        font-size: 10px;
+        line-height: 120%;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--color-grey-txt);
+    }
+
+    &__card-info-dot {
+        align-self: center;
+    }
+
+    &__card-title {
+        font-size: 18px;
+        line-height: 100%;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--color-grey-lbl);
+    }
+
+    &__card-text {
+        font-size: 16px;
+        line-height: 120%;
+        font-weight: 300;
+        letter-spacing: 0.02em;
+        color: var(--color-grey-lbl);
+    }
+
+    &__card-author {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 6px;
+    }
+
+    &__card-author-image {
+        & img {
+            width: 100%;
+        }
+    }
+
+    &__card-author-name {
+        font-size: 10px;
+        line-height: 120%;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--color-grey-txt);
+    }
+
+}
+
+@media(max-width: 1440px) {
+    .blog {
+        & .blog__container {
+            padding-inline: calc(32px + (120 - 32) * ((100vw - 1264px) / (1440 - 1264)));
+        }
+    }
+}
+
+@media(max-width: 1264px) {
+    .blog {
+        & .blog__container {
+            padding-inline: 32px;
+            padding-bottom: calc(92px + (150 - 92) * ((100vw - 768px) / (1264 - 768)));
+        }
+
+        &__heading {
+            padding-top: calc(92px + (150 - 92) * ((100vw - 768px) / (1264 - 768)));
+            padding-bottom: calc(32px + (48 - 32) * ((100vw - 768px) / (1264 - 768)));
+        }
+
+        &__heading h1 {
+            font-size: calc(52px + (80 - 52) * ((100vw - 768px) / (1264 - 768)));
+        }
+
+        &__cards {
+            column-gap: calc(21px + (24 - 21) * ((100vw - 768px) / (1264 - 768)));
+            row-gap: calc(32px + (48 - 32) * ((100vw - 768px) / (1264 - 768)));
+            padding-top: calc(32px + (48 - 32) * ((100vw - 768px) / (1264 - 768)));
+            padding-bottom: calc(92px + (150 - 92) * ((100vw - 768px) / (1264 - 768)));
+        }
+
+        &__card-info-category,
+        &__card-info-date,
+        &__card-info-time {
+            font-size: calc(8px + (10 - 8) * ((100vw - 768px) / (1264 - 768)));
+        }
+
+        &__card-title {
+            font-size: calc(14px + (18 - 14) * ((100vw - 768px) / (1264 - 768)));
+        }
+
+        &__card-text {
+            font-size: calc(12px + (16 - 12) * ((100vw - 768px) / (1264 - 768)));
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .blog {
+        & .blog__container {
+            padding-inline: calc(24px + (32 - 24) * ((100vw - 360px) / (768 - 360)));
+            padding-bottom: calc(81px + (92 - 81) * ((100vw - 360px) / (768 - 360)));
+        }
+
+        &__heading {
+            padding-top: calc(81px + (92 - 81) * ((100vw - 360px) / (768 - 360)));
+            padding-bottom: calc(16px + (32 - 16) * ((100vw - 360px) / (768 - 360)));
+        }
+
+        &__heading h1 {
+            font-size: calc(40px + (52 - 40) * ((100vw - 360px) / (768 - 360)));
+        }
+
+        &__cards {
+            column-gap: 21px;
+            row-gap: 32px;
+            padding-top: calc(16px + (32 - 16) * ((100vw - 360px) / (768 - 360)));
+            padding-bottom: calc(81px + (92 - 81) * ((100vw - 360px) / (768 - 360)));
+        }
+
+        &__card-info {
+            max-width: 95%;
+            /* gap: 16px; */
+        }
+
+        &__card-info-category,
+        &__card-info-date,
+        &__card-info-time {
+            font-size: calc(10px + (8 - 10) * ((100vw - 768px) / (1264 - 768)));
+        }
+
+        &__card-title {
+            font-size: 14px;
+        }
+
+        &__card-text {
+            font-size: 12px;
+        }
+    }
+}
+
+@media(max-width: 640px) {
+    .blog {
+        &__card {
+            width: calc((100% - 21px) / 2);
+        }
+    }
+}
+
+@media(max-width: 480px) {
+    .blog {
+        &__card {
+            width: 100%;
+
+            &-image {
+                max-height: 156px;
+            }
+        }
+    }
+}
+
+@media(max-width: 360px) {
+    .blog {
+        & .blog__container {
+            padding-inline: 24px;
+            padding-bottom: 81px;
+        }
+
+        &__heading {
+            padding-top: 81px;
+            padding-bottom: 16px;
+        }
+
+        &__heading h1 {
+            font-size: 40px;
+        }
+
+        &__cards {
+            padding-top: 16px;
+            padding-bottom: 81px;
+        }
+    }
+}

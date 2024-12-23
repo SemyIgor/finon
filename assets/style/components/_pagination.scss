@@ -1,0 +1,39 @@
+.pagination {
+    
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 5px;
+
+        @include add-property(font-size, 16, 14);
+
+        li {
+            &.active {
+                span {
+
+                }
+            }
+
+            a {
+                text-decoration: none !important;
+
+                @include media-hover {
+                    &:hover {}
+                }
+            }
+
+            * {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @include add-property(width, 40, 30);
+
+                aspect-ratio: 1;
+            }
+        }
+    }
+}

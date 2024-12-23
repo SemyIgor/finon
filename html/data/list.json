@@ -1,0 +1,14 @@
+[
+    {
+        "img": "img/1.jpg",
+        "title": "Название 1",
+        "description": "<p>Описание 1</p>",
+        "link": "#link1"
+    },
+    {
+        "img": "img/2.jpg",
+        "title": "Название 2",
+        "description": "<p>Описание 2</p>",
+        "link": "#2"
+    }
+]

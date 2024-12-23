@@ -1,0 +1,165 @@
+@import 'variables';
+
+// flex
+@mixin display-flex($flex-direction: row, $justify-content: initial, $align-item: initial, $gap-max: 0px, $gap-min: 0px) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-item;
+    gap: $gap-max;
+
+    $gap-max: strip-units($gap-max);
+    $gap-min: strip-units($gap-min);
+
+    @if $gap-min < $gap-max {
+        @include media-max(xxl) {
+            @include responsive-property(gap, $gap-max, $gap-min);
+        }
+    }
+}
+
+// example: @include flex(row, space-between, center, 20px, 10px);
+
+
+// Visibility
+@mixin fade($type: "hide") {
+    @if $type=="hide" {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 300ms, opacity 300ms;
+    }
+
+    @else if $type=="show" {
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 300ms, opacity 300ms;
+    }
+}
+
+// example: @include fade(hide);
+
+
+// font size
+@mixin font-size($font-size, $line-height: normal, $letter-spacing: normal) {
+    font-size: $font-size * 1px;
+    // font-size: $font-size * 0.1rem;
+    // example using rem values and 62.5% font-size so 1rem = 10px
+
+    @if $line-height==normal {
+        line-height: normal;
+    }
+
+    @else {
+        line-height: $line-height / $font-size;
+    }
+
+    @if $letter-spacing==normal {
+        letter-spacing: normal;
+    }
+
+    @else {
+        letter-spacing: #{$letter-spacing / $font-size}em;
+    }
+}
+
+// example: @include font-size(12, 18, 1.2);
+// p {
+//     @include font-size(12, 18, 1.2);
+//     // returns
+//     font-size: 12px;
+//     line-height: 1.5; // 18 / 12
+//     letter-spacing: 0.1em;
+//   }
+
+
+// media
+$media-breakpoints: (
+    xs: 360px,
+    sm: 480px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+    xxxl: 2000px,
+);
+ 
+@mixin media-min($breakpoint) {
+    @media (min-width: map-get($media-breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+@mixin media-max($breakpoint) {
+    @media (max-width: map-get($media-breakpoints, $breakpoint) - 0.02px) {
+        @content;
+    }
+}
+
+// retina media
+@mixin media-bg() {
+
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+        @content;
+    }
+}
+
+// meida hover & active
+@mixin media-hover() {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+
+    @media (hover: none) {
+        &:active {
+            @content;
+        }
+    }
+}
+// @include media-hover {}
+
+
+
+// line clamp
+@mixin line-clamp($value: 3) {
+    display: -webkit-box;
+    -webkit-line-clamp: $value;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+// example: @include line-clamp(3);
+
+
+
+// responsive
+
+// responsive-property
+@mixin responsive-property($property-name, $max-value: 16, $min-value: 12) {
+    #{$property-name}: calc(#{$min-value}px + (#{$max-value} - #{$min-value}) * ((100vw - $container-min-width) / ($container-max-width-value - $container-min-width-value)));
+}
+
+// example: @include responsive-property(font-size, 14, 18); 
+
+// add-property
+@mixin add-property($name, $max-value, $min-value) {
+    // --#{$name}: #{$max-value}px;
+    // #{$name}: var(--#{$name});
+
+    // @include media-max(xxl) {
+    //     @include responsive-property(--#{$name}, #{$max-value}, $min-value);
+    // }
+
+    #{$name}: #{$max-value}px;
+
+    @include media-max(xxl) {
+        @include responsive-property(#{$name}, #{$max-value}, $min-value);
+    }
+}
+
+// fluid-text
+@mixin fluid-text($min: 16, $max: 48) {
+    font-size: clam(#{$min}px, #{$max / 1400 * 100}vw, #{$max}px);
+}

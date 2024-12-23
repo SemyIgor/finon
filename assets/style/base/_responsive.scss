@@ -1,0 +1,35 @@
+.show-lg {
+    @include media-min(lg) {
+        display: none !important;
+    }
+}
+
+.hidden-lg {
+    @include media-max(lg) {
+        display: none !important;
+    }
+}
+
+.show-md {
+    @include media-min(md) {
+        display: none !important;
+    }
+}
+
+.hidden-md {
+    @include media-max(md) {
+        display: none !important;
+    }
+}
+
+.show-sm {
+    @include media-min(sm) {
+        display: none !important;
+    }
+}
+
+.hidden-sm {
+    @include media-max(sm) {
+        display: none !important;
+    }
+}

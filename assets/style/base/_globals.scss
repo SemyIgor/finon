@@ -1,0 +1,183 @@
+html {
+    // scrollbar-gutter: stable;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-optical-sizing: auto;
+    font-weight: var(--font-weight);
+    font-style: normal;
+
+    line-height: var(--line-height);
+
+    background: var(--body-bg);
+
+    color: var(--color-text);
+
+    overflow-x: hidden;
+
+    // text-wrap: balance;
+
+    // @include add-property(font-size, 16, 14);
+}
+
+// page wrapper 
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    .header {}
+
+    .main {
+        flex: 1 1 auto;
+
+        .section {}
+    }
+
+    .footer {}
+}
+
+// page wrapper  
+
+// container
+[class*="__container"]:not(.fancybox__container) {
+    width: 100%;
+
+    width: clamp(var(--container-width-min), 100%, var(--container-width-max));
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+
+    padding-inline: 24px;
+
+    @media (min-width: 1501px) {
+        padding-inline: 0;
+    }
+
+    @media (min-width: 1280px) and (max-width: 1500px) {
+        // padding-inline: 50px;
+    }
+
+    @include media-max(sm) {
+        padding-inline: 20px;
+    }
+}
+
+// container
+
+// link
+a {}
+
+a:has(img) {
+    text-decoration: none;
+    display: block;
+}
+
+:where(a[class]) {
+    text-decoration: none;
+    color: inherit;
+}
+
+// link
+
+// button
+:where(button[class]) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+    background: none;
+    cursor: pointer;
+}
+
+// button
+
+// input 
+:where(input[class]) {
+    border: 0;
+    outline: none;
+}
+
+// input 
+
+// img
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+// img
+
+// svg 
+svg *[fill] {
+    fill: currentColor;
+}
+
+svg *[stroke] {
+    stroke: currentColor;
+}
+
+// svg 
+
+// placeholder
+textarea::placeholder,
+input::placeholder {
+    color: var(--color-placeholder);
+}
+
+textarea:focus::placeholder,
+input:focus::placeholder {
+    color: transparent;
+    transition: color 0.3s ease;
+}
+
+// placeholder
+
+
+.table-responsive {
+    overflow-x: auto;
+
+    @include media-max(md) {
+        width: calc(100% + 40px);
+        margin-left: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+// .wysiwyg {
+
+//     p,
+//     li {
+//         a {
+//             color: var(--color-basic);
+//             text-decoration: none;
+
+//             transition: color var(--transition);
+
+//             @include media-hover {
+//                 color: var(--color-btn-hover);
+//             }
+//         }
+//     }
+// }
+
+p {
+    a {
+        color: var(--color-basic);
+        text-decoration: none;
+
+        transition: color var(--transition);
+
+        @include media-hover {
+            color: var(--color-btn-hover);
+        }
+    }
+}
