@@ -820,6 +820,7 @@ p a {
   }
 }
 .blog {
+  background-color: var(--color-grey-bg);
   --color-grey-bg: #F7FAFB;
   --color-grey-lbl: #171A26;
   --color-grey-phold: rgba(23, 26, 38, 0.64);
@@ -847,7 +848,6 @@ p a {
   margin: 0;
 }
 .blog .blog__container {
-  background-color: var(--color-grey-bg);
   padding-bottom: 150px;
   width: clamp(360px, 100%, 1440px);
   padding-inline: 120px;
@@ -877,6 +877,8 @@ p a {
 .blog__card {
   width: calc((100% - 48px) / 3);
   transition: transform 0.3s ease;
+  position: relative;
+  cursor: pointer;
 }
 .blog__card:hover {
   transform: scale(1.05);
@@ -925,7 +927,13 @@ p a {
   text-transform: uppercase;
   color: var(--color-grey-lbl);
 }
+.blog__card-title::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
 .blog__card-text {
+  position: relative;
   font-size: 16px;
   line-height: 120%;
   font-weight: 300;
@@ -1048,6 +1056,7 @@ p a {
   }
 }
 .article {
+  background-color: var(--color-grey-bg);
   --color-grey-bg: #F7FAFB;
   --color-grey-lbl: #171A26;
   --color-grey-phold: rgba(23, 26, 38, 0.64);
@@ -1075,7 +1084,6 @@ p a {
   margin: 0;
 }
 .article .article__container {
-  background-color: var(--color-grey-bg);
   padding-bottom: 150px;
   width: clamp(360px, 100%, 1440px);
   padding-inline: 120px;
@@ -1162,6 +1170,8 @@ p a {
 .article__card {
   width: calc((100% - 48px) / 3);
   transition: transform 0.3s ease;
+  position: relative;
+  cursor: pointer;
 }
 .article__card:hover {
   transform: scale(1.05);
@@ -1210,7 +1220,13 @@ p a {
   text-transform: uppercase;
   color: var(--color-grey-lbl);
 }
+.article__card-title::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
 .article__card-text {
+  position: relative;
   font-size: 16px;
   line-height: 120%;
   font-weight: 300;
@@ -1434,4 +1450,191 @@ p a {
 }
 .index a:hover {
   opacity: 0.64;
+}
+
+:root {
+  --font-size-18-14-14: 18px;
+  --font-size-14-12-14: 14px;
+}
+
+.outstaff {
+  background-color: var(--color-grey-bg);
+  --color-grey-bg: #F7FAFB;
+  --color-grey-lbl: #171A26;
+  --color-grey-phold: rgba(23, 26, 38, 0.64);
+  --color-grey-txt: #939AAA;
+  --color-black-btn-txt: #2c3246;
+  --color-black-btn-bg: #73ffab;
+  --color-green-txt: #2ac77b;
+}
+.outstaff h1,
+.outstaff h2,
+.outstaff h3,
+.outstaff h4,
+.outstaff h5,
+.outstaff h6,
+.outstaff p {
+  margin: 0;
+}
+.outstaff input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+.outstaff .outstaff__container {
+  padding-top: 96px;
+  padding-bottom: 105px;
+  width: clamp(360px, 100%, 1440px);
+  padding-inline: 120px;
+}
+.outstaff__heading-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 222px;
+}
+.outstaff__heading-box-info {
+  width: 475px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 42px;
+}
+.outstaff__heading-box-heading h1 {
+  font-size: 80px;
+  line-height: 90%;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--color-green-txt);
+}
+.outstaff__heading-box-text p {
+  font-size: var(--font-size-18-14-14);
+  line-height: 115%;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: #2c3246;
+}
+.outstaff__heading-box-image {
+  width: 427px;
+  padding-left: 0;
+  overflow: hidden;
+}
+.outstaff__heading-box-image img {
+  width: 100%;
+}
+.outstaff__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 8px;
+  border-radius: 32px;
+  padding: 16px 24px;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: var(--color-black-btn-bg);
+}
+.outstaff__btn span {
+  font-size: var(--font-size-14-12-14);
+  line-height: 100%;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-black-btn-txt);
+}
+.outstaff__btn span:first-of-type {
+  display: block;
+}
+.outstaff__btn span:last-of-type {
+  display: none;
+}
+.outstaff__btn:hover {
+  opacity: 0.64;
+}
+
+@media (max-width: 1440px) {
+  .outstaff .outstaff__container {
+    padding-inline: calc(32px + 88 * (100vw - 1264px) / 176);
+  }
+}
+/* Для переменных */
+@media (max-width: 1264px) {
+  :root {
+    --font-size-18-14-14: calc(14px + (18 - 14) * ((100vw - 768px) / (1264 - 768)));
+    --font-size-14-12-14: calc(12px + (14 - 12) * ((100vw - 768px) / (1264 - 768)));
+  }
+}
+@media (max-width: 1264px) {
+  .outstaff .outstaff__container {
+    padding-inline: 32px;
+    padding-top: calc(92px + 4 * (100vw - 768px) / 496);
+    padding-bottom: calc(129px + -24 * (100vw - 768px) / 496);
+  }
+  .outstaff__heading-box {
+    /*             padding-bottom: calc(32px + (48 - 32) * ((100vw - 768px) / (1264 - 768))); */
+    gap: calc(63px + 159 * (100vw - 768px) / 496);
+  }
+  .outstaff__heading-box-info {
+    width: calc(309px + 166 * (100vw - 768px) / 496);
+    gap: calc(32px + 10 * (100vw - 768px) / 496);
+  }
+  .outstaff__heading-box-image {
+    width: calc(304px + 123 * (100vw - 768px) / 496);
+  }
+  .outstaff__heading-box-heading h1 {
+    font-size: calc(52px + 28 * (100vw - 768px) / 496);
+  }
+  .outstaff__btn {
+    padding: calc(11px + 5 * (100vw - 768px) / 496) calc(18px + 6 * (100vw - 768px) / 496);
+  }
+}
+/* Для переменных */
+@media (max-width: 768px) {
+  :root {
+    --font-size-18-14-14: 14px;
+    --font-size-14-12-14: calc(14px + (12 - 14) * ((100vw - 360px) / (768 - 360)));
+  }
+}
+@media (max-width: 768px) {
+  .outstaff .outstaff__container {
+    padding-inline: calc(18px + 14 * (100vw - 360px) / 408);
+    padding-top: calc(69px + 23 * (100vw - 360px) / 408);
+    padding-bottom: calc(58px + 71 * (100vw - 360px) / 408);
+  }
+  .outstaff__heading-box-info {
+    gap: calc(20px + 12 * (100vw - 576px) / 192);
+  }
+  .outstaff__heading-box-text {
+    margin-bottom: calc(12px + -12 * (100vw - 576px) / 192);
+  }
+}
+@media (max-width: 576px) {
+  .outstaff__heading-box {
+    flex-direction: column-reverse;
+    gap: 58px;
+  }
+  .outstaff__heading-box-info {
+    width: 100%;
+    gap: 20px;
+  }
+  .outstaff__heading-box-text {
+    margin-bottom: 12px;
+  }
+  .outstaff__heading-box-image {
+    width: 84%;
+    align-self: center;
+  }
+}
+/* Для переменных */
+@media (max-width: 360px) {
+  :root {
+    --font-size-14-12-14: 14px;
+  }
 }/*# sourceMappingURL=main.css.map */

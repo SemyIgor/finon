@@ -1,5 +1,7 @@
 .article {
 
+    background-color: var(--color-grey-bg);
+
     h1,
     h2,
     h3,
@@ -30,7 +32,6 @@
     --color-black-btn-bg: #73ffab;
 
     & .article__container {
-        background-color: var(--color-grey-bg);
         padding-bottom: 150px;
         width: clamp(360px, 100%, 1440px);
         padding-inline: 120px;
@@ -132,6 +133,8 @@
     &__card {
         width: calc((100% - 48px) / 3);
         transition: transform .3s ease;
+        position: relative;
+        cursor: pointer;
 
         &:hover {
             transform: scale(1.05);
@@ -188,9 +191,16 @@
         font-weight: 700;
         text-transform: uppercase;
         color: var(--color-grey-lbl);
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+        }
     }
 
     &__card-text {
+        position: relative;
         font-size: 16px;
         line-height: 120%;
         font-weight: 300;
