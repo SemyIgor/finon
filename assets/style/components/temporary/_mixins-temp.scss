@@ -1,0 +1,4 @@
+@mixin responsivity-temp($property-name,
+    $max-value: 16, $min-value: 12, $screen-min-width: 768, $screen-max-width: 1264) {
+    #{$property-name}: calc(#{$min-value}px + (#{$max-value} - #{$min-value}) * ((100vw - (#{$screen-min-width}px)) / ($screen-max-width - $screen-min-width)));
+}

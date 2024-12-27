@@ -242,3 +242,53 @@
         --font-size-14-12-14: 14px;
     }
 }
+
+/* === pg-service ======== */
+
+.pg-service {
+    &.outstaff__container {
+        padding-top: 72px;
+        padding-bottom: 103px;
+    }
+
+    &.outstaff__heading-box-image {
+        /* width: 296px; */
+        width: 585px;
+        height: 442px;
+        display: flex;
+        justify-content: center;
+
+        /* padding-right: 144px; */
+        & img {
+            height: 100%;
+            width: auto;
+        }
+    }
+}
+
+@media(max-width: 1264px) {
+    $screen-max-width: 1264;
+    $screen-min-width: 768;
+
+    .pg-service {
+        &.outstaff__container {
+            /* @include responsivity-temp(padding-top, 72, 78, 768, 1264); */
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .pg-service {
+        &.outstaff__heading-box-image {
+            justify-content: flex-end;
+        }
+    }
+}
+
+@media(max-width: 576px) {
+    .pg-service {
+        &.outstaff__heading-box-image {
+            justify-content: center;
+        }
+    }
+}
