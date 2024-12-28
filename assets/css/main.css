@@ -1459,6 +1459,7 @@ p a {
 
 .outstaff {
   background-color: var(--color-grey-bg);
+  margin: 0 auto;
   --color-grey-bg: #F7FAFB;
   --color-grey-lbl: #171A26;
   --color-grey-phold: rgba(23, 26, 38, 0.64);
@@ -1999,5 +2000,179 @@ p a {
   }
   .custom-dev .development__item.item-07 {
     order: 1;
+  }
+}
+.border-list {
+  background-color: var(--color-black-btn-txt);
+  padding-bottom: 75px;
+  --color-grey-bg: #F7FAFB;
+  --color-grey-lbl: #171A26;
+  --color-grey-phold: rgba(23, 26, 38, 0.64);
+  --color-grey-txt: #939AAA;
+  --color-black-btn-txt: #2c3246;
+  --color-black-btn-bg: #73ffab;
+  --color-white-text-0: #fff;
+  --color-white-text: #eff2f4;
+  --color-green-bg:#2AC77B;
+}
+.border-list h1,
+.border-list h2,
+.border-list h3,
+.border-list h4,
+.border-list h5,
+.border-list h6,
+.border-list p {
+  margin: 0;
+}
+.border-list input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+.border-list__heading {
+  max-width: 588px;
+  margin-bottom: 80px;
+}
+.border-list__heading-text {
+  font-size: 64px;
+  line-height: 90%;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--color-green-bg);
+}
+.border-list__boxs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.border-list__box {
+  border: 1px solid var(--color-green-bg);
+  border-radius: 22px;
+  padding: 42px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+.border-list__title-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  width: 400px;
+}
+.border-list__image {
+  width: 56px;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+}
+.border-list__image img {
+  width: 100%;
+}
+.border-list__title {
+  /* max-width: 320px; */
+}
+.border-list__title-text {
+  font-size: 24px;
+  line-height: 100%;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-green-bg);
+}
+.border-list__item {
+  max-width: 692px;
+  font-size: 18px;
+  line-height: 130%;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--color-white-text-0);
+  position: relative;
+  padding-left: 20px;
+  /* list-style-type: disc; */
+}
+.border-list__item::before {
+  position: absolute;
+  content: "•";
+  left: 0px;
+}
+.border-list__item ~ .border-list__item {
+  margin-top: 24px;
+}
+
+@media (max-width: 1200px) {
+  .border-list__heading {
+    max-width: calc(362px + 226 * (100vw - 768px) / 432);
+    margin-bottom: calc(56px + 24 * (100vw - 768px) / 432);
+  }
+  .border-list__heading-text {
+    font-size: calc(42px + 22 * (100vw - 768px) / 432);
+  }
+  .border-list__boxs {
+    gap: calc(18px + 6 * (100vw - 768px) / 432);
+  }
+  .border-list__box {
+    padding: calc(32px + 10 * (100vw - 768px) / 432);
+    border-radius: calc(18px + 4 * (100vw - 768px) / 432);
+  }
+  .border-list__title-wrapper {
+    gap: calc(16px + 8 * (100vw - 768px) / 432);
+    /* width: 400px; */
+  }
+  .border-list__image {
+    width: calc(48px + 8 * (100vw - 768px) / 432);
+  }
+  .border-list__title-text {
+    font-size: calc(18px + 6 * (100vw - 768px) / 432);
+  }
+  .border-list__item {
+    font-size: calc(14px + 4 * (100vw - 768px) / 432);
+  }
+}
+@media (max-width: 768px) {
+  .border-list__heading {
+    max-width: calc(286px + 76 * (100vw - 360px) / 408);
+    margin-bottom: calc(36px + 20 * (100vw - 360px) / 408);
+  }
+  .border-list__heading-text {
+    font-size: calc(32px + 10 * (100vw - 360px) / 408);
+  }
+  .border-list__boxs {
+    gap: 18px;
+  }
+  .border-list__box {
+    padding: 32px calc(24px + 8 * (100vw - 360px) / 408);
+    border-radius: 18px;
+  }
+  .border-list__title-wrapper {
+    gap: 16px;
+  }
+  .border-list__image {
+    width: calc(32px + 16 * (100vw - 360px) / 408);
+  }
+  .border-list__title-text {
+    font-size: 18px;
+  }
+  .border-list__item {
+    font-size: 14px;
+  }
+}
+@media (max-width: 700px) {
+  .border-list__box {
+    flex-direction: column;
+  }
+  .border-list__title-wrapper {
+    width: 100%;
+  }
+  .border-list__items {
+    width: 100%;
   }
 }/*# sourceMappingURL=main.css.map */
