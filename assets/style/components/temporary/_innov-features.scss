@@ -94,6 +94,11 @@
         border-radius: 19px;
         padding: 24px;
 
+        &:nth-child(3) {
+            background-color: var(--color-green-bg);
+
+        }
+
         &-image {
             margin-bottom: 23px;
             width: 54px;
@@ -130,8 +135,11 @@
                 letter-spacing: 0.01em;
                 color: var(--color-white-text-0);
             }
-
         }
+    }
+
+    &__card:nth-child(3) &__card-title {
+        color: var(--color-white-text-0);
     }
 
 }

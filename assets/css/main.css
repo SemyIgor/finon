@@ -2503,6 +2503,9 @@ p a {
   border-radius: 19px;
   padding: 24px;
 }
+.innov-features__card:nth-child(3) {
+  background-color: var(--color-green-bg);
+}
 .innov-features__card-image {
   margin-bottom: 23px;
   width: 54px;
@@ -2534,6 +2537,9 @@ p a {
   line-height: 130%;
   font-weight: 400;
   letter-spacing: 0.01em;
+  color: var(--color-white-text-0);
+}
+.innov-features__card:nth-child(3) .innov-features__card-title {
   color: var(--color-white-text-0);
 }
 
