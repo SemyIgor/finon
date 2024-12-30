@@ -2577,6 +2577,12 @@ p a {
     height: auto;
     padding: 24px;
   }
+  .innov-features__card:nth-child(3) {
+    order: -1;
+  }
+  .innov-features__card:nth-child(1) {
+    order: -1;
+  }
 }
 @media (max-width: 768px) {
   .innov-features__heading {

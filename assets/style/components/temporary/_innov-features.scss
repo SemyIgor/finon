@@ -188,6 +188,14 @@
         &__card {
             height: auto;
             padding: 24px;
+
+            &:nth-child(3) {
+                order: -1;
+            }
+
+            &:nth-child(1) {
+                order: -1;
+            }
         }
     }
 }
